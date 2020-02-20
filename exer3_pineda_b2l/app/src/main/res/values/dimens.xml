@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="tile_size">50dp</dimen>
+    <dimen name="top_row_margin">0dp</dimen>
+    <dimen name="between_margins">8dp</dimen>
+    <dimen name="text_count_size">24sp</dimen>
+    <dimen name="headers_margin">16dp</dimen>
+    <dimen name="name_size">50sp</dimen>
+    <dimen name="guide_width">285dp</dimen>
+</resources>
