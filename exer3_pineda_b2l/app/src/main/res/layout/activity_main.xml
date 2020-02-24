@@ -37,15 +37,16 @@
         android:id="@+id/game_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="monospace"
         android:text="@string/game_title"
         android:textAlignment="center"
         android:textColor="@android:color/black"
-        android:textSize="36sp"
+        android:textSize="@dimen/title_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/constraint_guide"
-        app:layout_constraintVertical_bias="0.15" />
+        app:layout_constraintVertical_bias="0.20" />
 
     <TextView
         android:id="@+id/constraint_guide"
@@ -65,247 +66,294 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/headers_margin"
         android:layout_marginRight="@dimen/headers_margin"
-        android:visibility="gone"
         android:fontFamily="cursive"
         android:text="@string/name_placeholder"
         android:textAlignment="viewEnd"
         android:textColor="@android:color/black"
         android:textSize="@dimen/name_size"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/move_count"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.08" />
+        app:layout_constraintVertical_bias="0.364" />
 
     <TextView
         android:id="@+id/move_count"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         android:text="@string/move_count"
         android:textAlignment="center"
+        android:visibility="gone"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="@dimen/text_count_size"
         app:layout_constraintBaseline_toBaselineOf="@+id/counter"
-        app:layout_constraintStart_toStartOf="@+id/display_name" />
+        app:layout_constraintStart_toStartOf="@+id/constraint_guide" />
 
     <TextView
         android:id="@+id/counter"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="32dp"
         android:layout_marginStart="@dimen/headers_margin"
-        android:layout_marginEnd="@dimen/between_margins"
-        android:visibility="gone"
         android:text="@string/default_count"
         android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_count_size"
-        app:layout_constraintBottom_toTopOf="@+id/tile_five"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/constraint_guide"
+        app:layout_constraintHorizontal_bias="0.144"
         app:layout_constraintStart_toEndOf="@+id/move_count"
         app:layout_constraintTop_toBottomOf="@+id/display_name"
-        app:layout_constraintVertical_bias="0.7" />
+        app:layout_constraintVertical_bias="0.059" />
 
     <TextView
         android:id="@+id/tile_one"
         style="@style/whiteBox1"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_six"
         app:layout_constraintEnd_toStartOf="@+id/tile_two"
-        app:layout_constraintTop_toTopOf="@+id/tile_two" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/move_count" />
 
     <TextView
         android:id="@+id/tile_two"
         style="@style/whiteBox1"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_seven"
         app:layout_constraintEnd_toStartOf="@+id/tile_three"
-        app:layout_constraintTop_toTopOf="@+id/tile_three" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_one"
+        app:layout_constraintTop_toBottomOf="@+id/move_count" />
 
     <TextView
         android:id="@+id/tile_three"
         style="@style/whiteBox1"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_eight"
         app:layout_constraintEnd_toStartOf="@+id/tile_four"
-        app:layout_constraintTop_toTopOf="@+id/tile_four" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_two"
+        app:layout_constraintTop_toBottomOf="@+id/move_count" />
 
     <TextView
         android:id="@+id/tile_four"
         style="@style/whiteBox1"
-        android:layout_marginEnd="8dp"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_nine"
         app:layout_constraintEnd_toStartOf="@+id/tile_five"
-        app:layout_constraintTop_toTopOf="@+id/tile_five" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_three"
+        app:layout_constraintTop_toBottomOf="@+id/counter" />
 
     <TextView
         android:id="@+id/tile_five"
         style="@style/whiteBox1"
         android:visibility="gone"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/constraint_guide"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.35000000" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_four"
+        app:layout_constraintTop_toTopOf="@+id/tile_four" />
+
+    <TextView
+        android:id="@+id/tile_ten"
+        style="@style/whiteBox2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_fifteen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_nine"
+        app:layout_constraintTop_toBottomOf="@+id/tile_five" />
 
     <TextView
         android:id="@+id/tile_six"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_eleven"
         app:layout_constraintEnd_toStartOf="@+id/tile_seven"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tile_one" />
 
     <TextView
         android:id="@+id/tile_seven"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twelve"
         app:layout_constraintEnd_toStartOf="@+id/tile_eight"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_six"
         app:layout_constraintTop_toBottomOf="@+id/tile_two" />
 
     <TextView
         android:id="@+id/tile_eight"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_thirteen"
         app:layout_constraintEnd_toStartOf="@+id/tile_nine"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_seven"
         app:layout_constraintTop_toBottomOf="@+id/tile_three" />
 
     <TextView
         android:id="@+id/tile_nine"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_fourteen"
         app:layout_constraintEnd_toStartOf="@+id/tile_ten"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_eight"
         app:layout_constraintTop_toBottomOf="@+id/tile_four" />
-
-    <TextView
-        android:id="@+id/tile_ten"
-        style="@style/whiteBox2"
-        android:layout_marginTop="@dimen/between_margins"
-        android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/tile_five"
-        app:layout_constraintTop_toBottomOf="@+id/tile_five" />
-
-    <TextView
-        android:id="@+id/tile_eleven"
-        style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/tile_twelve"
-        app:layout_constraintTop_toBottomOf="@+id/tile_six" />
-
-    <TextView
-        android:id="@+id/tile_twelve"
-        style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/tile_thirteen"
-        app:layout_constraintTop_toBottomOf="@+id/tile_seven" />
-
-    <TextView
-        android:id="@+id/tile_thirteen"
-        style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/tile_fourteen"
-        app:layout_constraintTop_toBottomOf="@+id/tile_eight" />
 
     <TextView
         android:id="@+id/tile_fourteen"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_nineteen"
         app:layout_constraintEnd_toStartOf="@+id/tile_fifteen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_thirteen"
         app:layout_constraintTop_toBottomOf="@+id/tile_nine" />
+
+    <TextView
+        android:id="@+id/tile_eleven"
+        style="@style/whiteBox2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_sixteen"
+        app:layout_constraintEnd_toStartOf="@+id/tile_twelve"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tile_six" />
+
+    <TextView
+        android:id="@+id/tile_thirteen"
+        style="@style/whiteBox2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_eighteen"
+        app:layout_constraintEnd_toStartOf="@+id/tile_fourteen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_twelve"
+        app:layout_constraintTop_toBottomOf="@+id/tile_eight" />
+
+    <TextView
+        android:id="@+id/tile_twelve"
+        style="@style/whiteBox2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_seventeen"
+        app:layout_constraintEnd_toStartOf="@+id/tile_thirteen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_eleven"
+        app:layout_constraintTop_toBottomOf="@+id/tile_seven" />
 
     <TextView
         android:id="@+id/tile_fifteen"
         style="@style/whiteBox2"
-        android:layout_marginTop="@dimen/between_margins"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/tile_ten"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twenty"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_fourteen"
         app:layout_constraintTop_toBottomOf="@+id/tile_ten" />
+
+    <TextView
+        android:id="@+id/tile_nineteen"
+        style="@style/whiteBox2"
+        android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twenty_four"
+        app:layout_constraintEnd_toStartOf="@+id/tile_twenty"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_eighteen"
+        app:layout_constraintTop_toBottomOf="@+id/tile_fourteen" />
 
     <TextView
         android:id="@+id/tile_sixteen"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twenty_one"
         app:layout_constraintEnd_toStartOf="@+id/tile_seventeen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tile_eleven" />
 
     <TextView
         android:id="@+id/tile_seventeen"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twenty_two"
         app:layout_constraintEnd_toStartOf="@+id/tile_eighteen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_sixteen"
         app:layout_constraintTop_toBottomOf="@+id/tile_twelve" />
 
     <TextView
         android:id="@+id/tile_eighteen"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twenty_three"
         app:layout_constraintEnd_toStartOf="@+id/tile_nineteen"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_seventeen"
         app:layout_constraintTop_toBottomOf="@+id/tile_thirteen" />
-
-    <TextView
-        android:id="@+id/tile_nineteen"
-        style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
-        android:visibility="gone"
-        app:layout_constraintEnd_toStartOf="@+id/tile_twenty"
-        app:layout_constraintTop_toBottomOf="@+id/tile_fourteen" />
 
     <TextView
         android:id="@+id/tile_twenty"
         style="@style/whiteBox2"
-        android:layout_marginTop="@dimen/between_margins"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/tile_fifteen"
+        app:layout_constraintBottom_toTopOf="@+id/tile_twenty_five"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_nineteen"
         app:layout_constraintTop_toBottomOf="@+id/tile_fifteen" />
 
     <TextView
         android:id="@+id/tile_twenty_one"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tile_twenty_two"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tile_sixteen" />
 
     <TextView
         android:id="@+id/tile_twenty_two"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tile_twenty_three"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_twenty_one"
         app:layout_constraintTop_toBottomOf="@+id/tile_seventeen" />
 
     <TextView
         android:id="@+id/tile_twenty_three"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tile_twenty_four"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_twenty_two"
         app:layout_constraintTop_toBottomOf="@+id/tile_eighteen" />
 
     <TextView
         android:id="@+id/tile_twenty_four"
         style="@style/whiteBox2"
-        android:layout_marginEnd="@dimen/between_margins"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/tile_twenty_five"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_twenty_three"
         app:layout_constraintTop_toBottomOf="@+id/tile_nineteen" />
 
     <TextView
         android:id="@+id/tile_twenty_five"
         style="@style/whiteBox2"
-        android:layout_marginTop="@dimen/between_margins"
         android:visibility="gone"
-        app:layout_constraintEnd_toEndOf="@+id/tile_twenty"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/tile_twenty_four"
         app:layout_constraintTop_toBottomOf="@+id/tile_twenty" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

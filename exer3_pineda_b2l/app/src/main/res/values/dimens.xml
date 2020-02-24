@@ -7,4 +7,5 @@
     <dimen name="headers_margin">16dp</dimen>
     <dimen name="name_size">50sp</dimen>
     <dimen name="guide_width">285dp</dimen>
+    <dimen name="title_size">50sp</dimen>
 </resources>

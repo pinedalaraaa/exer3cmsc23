@@ -9,12 +9,14 @@
     </style>
 
     <style name="whiteBox1">
+        <item name="android:background">@color/colorWhite</item>
         <item name="android:layout_width">@dimen/tile_size</item>
         <item name="android:layout_height">@dimen/tile_size</item>
         <item name="android:layout_marginTop">@dimen/top_row_margin</item>
     </style>
 
     <style name="whiteBox2">
+        <item name="android:background">@color/colorWhite</item>
         <item name="android:layout_width">@dimen/tile_size</item>
         <item name="android:layout_height">@dimen/tile_size</item>
         <item name="android:layout_marginTop">@dimen/between_margins</item>
